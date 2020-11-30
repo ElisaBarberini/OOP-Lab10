@@ -47,26 +47,13 @@ public final class ConcurrentGUI extends JFrame {
         /*
          * Register a listener that stops it
          */
-        stop.addActionListener(new ActionListener() {
-            /**
-             * event handler associated to action event on button stop.
-             * 
-             * @param e
-             *            the action event that will be handled by this listener
-             */
-            @Override
-            public void actionPerformed(final ActionEvent e) {
-                // Agent should be final
-                agent.stopCounting();
-            }
-        });
+        stop.addActionListener(e -> agent.stopCounting());
     }
-
     /*
      * The counter agent is implemented as a nested class. This makes it
      * invisible outside and encapsulated.
      */
-    private class Agent implements Runnable {
+    public class Agent implements Runnable {
         /*
          * Stop is volatile to ensure visibility. Look at:
          * 
