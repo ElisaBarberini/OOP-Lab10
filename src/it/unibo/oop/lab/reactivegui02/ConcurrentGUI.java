@@ -41,7 +41,7 @@ public class ConcurrentGUI extends JFrame {
             down.addActionListener(e -> agent.downCounting());
             up.addActionListener(e -> agent.upCounting());
     }
-        private class Agent implements Runnable {
+        public class Agent implements Runnable {
             private volatile boolean stop;
             private volatile boolean direction;
             private volatile int counter;

@@ -21,7 +21,7 @@ public final class ConcurrentGUI extends JFrame {
     private static final long serialVersionUID = 1L;
     private static final double WIDTH_PERC = 0.2;
     private static final double HEIGHT_PERC = 0.1;
-    private final JLabel display = new JLabel();
+    public final JLabel display = new JLabel();
     private final JButton stop = new JButton("stop");
 
     /**
@@ -76,7 +76,7 @@ public final class ConcurrentGUI extends JFrame {
                      * Event-Dispatch Thread (EDT)!
                      */
                     SwingUtilities.invokeAndWait(() -> ConcurrentGUI.this.display.setText(Integer.toString(Agent.this.counter)));
-                    this.counter++;
+                    this.counter ++;
                     Thread.sleep(100);
                 } catch (InvocationTargetException | InterruptedException ex) {
                     /*
